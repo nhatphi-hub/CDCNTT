@@ -1,0 +1,2 @@
+org.springframework.boot.EnvironmentPostProcessor=\
+com.smart_ecommerce.backend.IsolatedDatabaseTestEnvironmentPostProcessor

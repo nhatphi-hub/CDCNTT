@@ -1,0 +1,7 @@
+class AddressModel {
+  const AddressModel({required this.id,required this.userId,required this.recipientName,required this.phone,required this.province,required this.district,required this.ward,required this.addressDetail,required this.isDefault,this.createdAt});
+  final String id,userId,recipientName,phone,province,district,ward,addressDetail; final bool isDefault; final DateTime? createdAt;
+  factory AddressModel.fromJson(Map<String,dynamic> j)=>AddressModel(id:j['id'].toString(),userId:j['userId'].toString(),recipientName:j['recipientName']?.toString()??'',phone:j['phone']?.toString()??'',province:j['province']?.toString()??'',district:j['district']?.toString()??'',ward:j['ward']?.toString()??'',addressDetail:j['addressDetail']?.toString()??'',isDefault:j['isDefault']==true,createdAt:DateTime.tryParse(j['createdAt']?.toString()??''));
+  String get fullAddress => '$addressDetail, $ward, $district, $province';
+}
+class AddressDraft { const AddressDraft({required this.recipientName,required this.phone,required this.province,required this.district,required this.ward,required this.addressDetail,this.isDefault=false}); final String recipientName,phone,province,district,ward,addressDetail; final bool isDefault; Map<String,dynamic> toJson()=>{'recipientName':recipientName,'phone':phone,'province':province,'district':district,'ward':ward,'addressDetail':addressDetail,'isDefault':isDefault}; }

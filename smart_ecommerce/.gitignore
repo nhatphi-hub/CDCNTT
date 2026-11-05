@@ -1,0 +1,10 @@
+# Workspace-specific editor settings
+/.vscode/
+
+# Local environment files; examples remain reviewable
+.env*
+!.env.example
+
+# Python cache from audit utilities
+__pycache__/
+*.py[cod]
